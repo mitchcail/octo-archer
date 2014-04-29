@@ -1,0 +1,5 @@
+<h2>There are <%= @posts.count %> Posts on this page </h2>
+
+<% @posts.each do |post| %>
+	<h3><%= post %></h3>
+<% end %>
