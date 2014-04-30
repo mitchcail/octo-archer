@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
 
 	def index
-		@posts = ['google', 'shopify', 'y-combinator']
+		@posts = Post.all
+	end
+
+	def show
+		@post = Post.find(params[:id])
 	end
 end

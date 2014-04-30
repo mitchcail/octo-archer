@@ -1,5 +1,5 @@
 <h2>There are <%= @posts.count %> Posts on this page </h2>
 
 <% @posts.each do |post| %>
-	<h3><%= post %></h3>
+	<h3><%= link_to(post.title, post_path(post)) %>, <%= post.link %></h3>
 <% end %>
