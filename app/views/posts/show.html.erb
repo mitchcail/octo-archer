@@ -4,4 +4,5 @@
 <br/>
 <h3><%= @post.description %></h3>
 <br/>
-<%= link_to("Back to Posts", posts_path)%>
+<%= link_to("Back to Posts", posts_path)%> |
+<%= link_to "Edit Post", edit_post_path(@post) %>
