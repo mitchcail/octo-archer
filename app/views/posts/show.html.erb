@@ -5,4 +5,5 @@
 <h3><%= @post.description %></h3>
 <br/>
 <%= link_to("Back to Posts", posts_path)%> |
-<%= link_to "Edit Post", edit_post_path(@post) %>
+<%= link_to "Edit Post", edit_post_path(@post) %> |
+<%= link_to "Delete Post", post_path(@post), method: :delete, data: {confirm: 'Are you sure that you want to delete this?'} %>
