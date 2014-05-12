@@ -1,0 +1,12 @@
+<header>
+	<h2>OH NO!!! your form couldn't be saved</h2>
+	<h3>
+	Please correct the following
+	<%= pluralize(@post.errors.count, "error") %>
+	</h3>
+</header>
+<ul>
+	<%= @post.errors.full_messages.each do |message| %>
+		<li><%= message %></li>
+	<% end %>
+</ul>
