@@ -1,0 +1,14 @@
+<h3>Comments for <%= @post.title %></h3>
+<br/>
+<table class="table">
+	<% @comments.each do |comment| %>
+	<tr>
+ 		<td>
+ 			<p>
+ 			<strong><%= comment.name %></strong>
+ 			<p><%= comment.comment %></p>
+ 			</p>
+ 		</td>
+ 	</tr>
+ 	<% end %>
+</table>

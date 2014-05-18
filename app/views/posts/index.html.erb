@@ -1,13 +1,20 @@
 <h2>There are <%= @posts.count %> Posts on this page </h2>
+
 <%= link_to 'Add New Post', new_post_path %>
-<% @posts.each do |post| %>
-	<div class="panel panel-info">
-	  <div class="panel-heading">
-	    <h3 class="panel-title"><%= link_to(post.title, post_path(post)) %></h3>
-	  </div>
-	  <div class="panel-body">
-	    <%= post.link %> 
-	  </div>
-	</div>
-<% end %>
+
+<table class="table">
+	<% @posts.each do |post| %>
+	<tr>
+ 		<td>
+ 			<p>
+ 			<strong><%= post.title %></strong>
+ 			<p><%= post.link %></p>
+ 			</p>
+ 		</td>
+ 	</tr>
+ 	<% end %>
+</table>
+
+
+
 
