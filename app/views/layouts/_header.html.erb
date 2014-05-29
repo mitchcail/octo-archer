@@ -1,17 +1,13 @@
-<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-fixed-top bs-docs-nav">
   <div class="container">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <%= link_to "Launchify", root_path, class:"navbar-brand text-muted" %>
-    
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li>About</li>
-        <li>Sign in / out</li>
-      </ul>
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Launchify", root_path, class:"navbar-brand" %>
     </div>
   </div>
 </div>

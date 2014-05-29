@@ -1,0 +1,26 @@
+<h2>Post a new comment for <%= link_to @post.title, @post %></h2>
+<br/>
+<div class="row">
+<div class="col-md-5">
+	<%= form_for([@post,@comment]) do |f| %>
+		<form role="form">
+			<div class="form-group">
+				<%= f.label :name %><br/>
+				<%= f.text_field :name, size: 40, autofocus: true, class: "form-control" %>
+			</div>
+			<div class="form-group">
+				<%= f.label :comment %><br/>
+				<%= f.text_area :comment, row: 40, class: "form-control", rows: "10" %>
+			</div>
+			<div class="form-group">
+
+				<%= f.label :rating %><br/>
+				<%= f.select :rating, Comment::RATING, class: "form-control", prompt: 'Rate Project (OPTIONAL)' %>
+		
+			</div>
+
+			<%= f.submit 'Post Comment' %>
+		</form>
+	<% end %>
+	</div>
+</div>

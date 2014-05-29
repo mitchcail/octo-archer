@@ -1,14 +1,22 @@
-<h1><%= @post.title %></h1>
-<br/>
-<h3><%= @post.link %></h3>
-<br/>
-<h3><%= @post.description %></h3>
-<br/>
-<h4>Number of upvotes: <%= @post.upvotes %></h4>
-<br/>
-<%= link_to "View Comments", post_comments_path(@post) %>
-<br/>
+<div class = 'container'>
+	<br/>
+	<br/>
+	<div class="jumbotron">
+		<h1><%= @post.title %></h1>
+		<br/>
+		<h3><%= @post.link %></h3>
+		<br/>
+		<h3><%= @post.description %></h3>
+		<br/>
+		<h4>Number of upvotes: <%= @post.total_upvotes %></h4>
+		<%= link_to "upvote post", post_upvote_path(@post), method: "put"%>
+		<br/>
+		<%= link_to "View Comments", post_comments_path(@post) %> |
+		<%= link_to "Add new Comment", new_post_comment_path(@post) %>
+		<br/>
 
-<%= link_to "Back to Posts", posts_path %> |
-<%= link_to "Edit Post", edit_post_path(@post) %> |
-<%= link_to "Delete Post", post_path(@post), method: :delete, data: {confirm: 'Are you sure that you want to delete this?'} %>
+		<%= link_to "Back to Posts", posts_path %> |
+		<%= link_to "Edit Post", edit_post_path(@post) %> |
+		<%= link_to "Delete Post", post_path(@post), method: :delete, data: {confirm: 'Are you sure that you want to delete this?'} %>
+	</div>
+</div>

@@ -12,4 +12,18 @@ class Post < ActiveRecord::Base
 
 		puts (p-1) / (t+2)**1.5
 	end 
+
+	def upvote
+		self.upvotes = 0 if upvotes.nil?
+		self.upvotes += 1
+		puts upvotes
+	end
+
+	def total_upvotes
+		if upvotes.nil?
+			return 0
+		else
+			upvotes
+		end
+	end
 end

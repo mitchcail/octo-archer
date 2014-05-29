@@ -32,5 +32,4 @@ ActiveRecord::Schema.define(version: 20140517182633) do
     t.string   "description"
     t.integer  "upvotes"
   end
-
 end

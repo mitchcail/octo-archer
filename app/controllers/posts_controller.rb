@@ -41,6 +41,13 @@ class PostsController < ApplicationController
 		redirect_to posts_url
 	end
 
+	def upvote
+		post = Post.find(params[:id])
+		post.upvote
+		post.save
+		redirect_to :back
+	end
+
 
 	private
 

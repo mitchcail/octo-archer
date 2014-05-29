@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
  */
+.bs-docs-nav { margin-bottom: 0;
+			   background-color: #3498db;
+			   border-bottom-width: 0px;	}
+
+.navbar-brand { color: #fff; }

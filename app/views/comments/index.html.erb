@@ -1,5 +1,7 @@
 <h3>Comments for <%= @post.title %></h3>
 <br/>
+<%= link_to "add new comment", new_post_comment_path(@post)%>
+<br/>
 <table class="table">
 	<% @comments.each do |comment| %>
 	<tr>
