@@ -9,14 +9,47 @@
 		<h3><%= @post.description %></h3>
 		<br/>
 		<h4>Number of upvotes: <%= @post.total_upvotes %></h4>
-		<%= link_to "upvote post", post_upvote_path(@post), method: "put"%>
 		<br/>
-		<%= link_to "View Comments", post_comments_path(@post) %> |
-		<%= link_to "Add new Comment", new_post_comment_path(@post) %>
+		<p><%= link_to "upvote post", post_upvote_path(@post), method: "put", class: "btn btn-default btn-lg", id: "upvote"%></p>
+		<br/>
+		<%= link_to "View Comments", post_comments_path(@post), id: "link" %> |
+		<%= link_to "Add new Comment", new_post_comment_path(@post), id: "link" %>
 		<br/>
 
-		<%= link_to "Back to Posts", posts_path %> |
-		<%= link_to "Edit Post", edit_post_path(@post) %> |
-		<%= link_to "Delete Post", post_path(@post), method: :delete, data: {confirm: 'Are you sure that you want to delete this?'} %>
+		<%= link_to "Back to Posts", posts_path, id: "link" %> |
+		<%= link_to "Edit Post", edit_post_path(@post), id: "link" %> |
+		<%= link_to "Delete Post", post_path(@post), method: :delete, data: {confirm: 'Are you sure that you want to delete this?'}, id: "link" %>
+	</div>
+
+
+<div class="container">
+	<div class="row">
+		<h2>Comments</h2>
+	</div>
+		<% @comments.each do |comment| %>
+    		<div class="qa-message-list" id="wallmessages">
+				<div class="message-item" id="m16">
+					<div class="message-inner">
+						<div class="message-head clearfix">
+							<div class="avatar pull-left"><%= image_tag "place_holder.jpg", height: '90', width: '70' %></div>
+							<div class="user-detail">
+								<h5 class="handle"><%= comment.name %></h5>
+								<div class="post-meta">
+									<div class="asker-meta">
+										<span class="qa-message-what"></span>
+										<span class="qa-message-when">
+											<span class="qa-message-when-data"><%= time_ago_in_words(comment.created_at)%> ago</span>
+										</span>
+										<div class="qa-message-content">
+											<%= comment.comment %>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<% end %>
 	</div>
 </div>
