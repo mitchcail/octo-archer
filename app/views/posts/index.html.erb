@@ -14,23 +14,40 @@
     </div>
 </div>
 
+</br>
 
 <div class="container">
 	</br>
-	<table class="table">
 		<% @posts.each do |post| %>
-		<tr>
-	 		<td>
-	 			<p>
-	 			<strong><%= link_to post.title, post %></strong>
-	 			<p><%= post.link %></p>
-	 			</p>
-	 		</td>
-	 	</tr>
+    
+    <div class="row form-group product-chooser">
+    
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        <div class="product-chooser-item">
+          <img src="http://i1-news.softpedia-static.com/images/news2/Picture-of-the-Day-Red-Panda-Relaxes-on-a-Fence-2.jpg?1361003232" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12" alt="Mobile and Desktop">
+                <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+            <span class="title"><%= link_to post.title, post_path(post) %></span>
+            <span class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</span>
+            <input type="radio" name="product" value="mobile_desktop" checked="checked">
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+
 	 	<% end %>
-	</table>
 </div>
 
 
+<%= javascript_tag do %>
+  $(function(){
+  $('div.product-chooser').not('.disabled').find('div.product-chooser-item').on('click', function(){
+    $(this).parent().parent().find('div.product-chooser-item').removeClass('selected');
+    $(this).addClass('selected');
+    $(this).find('input[type="radio"]').prop("checked", true);
+    
+  });
+});
+<% end %>
 
 
