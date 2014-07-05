@@ -8,6 +8,12 @@
         <span class="icon-bar"></span>
       </button>
       <%= link_to "Launchify", root_path, class:"navbar-brand" %>
+      <% if current_user %>
+        <%= link_to current_user.name, current_user %>
+      <% else %>
+        <%= link_to "Sign Up", signup_path, class:"btn"%>
+        <%= link_to "Sign In", new_session_path, class:"btn"%>
+      <% end %>
     </div>
   </div>
 </div>
