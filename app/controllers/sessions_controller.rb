@@ -20,7 +20,15 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    fail
     session[:user_id] = nil
-    redirect_to root_url, notice: "Now you're signed out!"
+    redirect_to root_url
   end
+
+  #for some reason the destroy goes to the show method, will fix in future
+  def show
+    session[:user_id] = nil
+    redirect_to root_url
+  end
+
 end

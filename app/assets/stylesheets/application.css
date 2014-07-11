@@ -9,6 +9,14 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  
- *= require_tree .
+ *= require bootstrap.css
+ *= require flat-ui.css
+ *= require icon-font.css
+ *= require animations.css
+ *= require content_style.css
+ *= require contact_style.css
+ *= require header_style.css
+ *= require project_style.css
+ *= require footer_style.css
  */
 
