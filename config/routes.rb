@@ -1,6 +1,8 @@
 Launchify::Application.routes.draw do
   resource :session
 
+  get "sign_out" => "sessions#destroy"
+
   get "signup" => "users#new"
   resources :users
 

@@ -1,4 +1,4 @@
-<% if current_user?(@user) %>
+<% if current_user?(@user) || admin? %>
   <header class="header-16">
       <div class="container">
           <div class="row">
@@ -13,7 +13,7 @@
                               <li class="active"><a href="#">HOME</a></li>
                               <li><a href="#">PROJECTS</a></li>
                               <li><a href="#">EDIT PROFILE</a></li>
-                              <li><%= link_to "SIGN OUT", session_path, method: :delete %></li>
+                              <li><%= link_to "SIGN OUT", sign_out_path %></li>
                           </ul>
                       </div>
                   </div>
