@@ -77,3 +77,16 @@
         </div>
     </div>
 </section>
+
+<% if @liked_posts.any? %>
+  <h3>LIKED POSTS</h3>
+  <% @liked_posts.each do |post| %>
+    <%= link_to post.title, post%>
+  <% end %>
+<% end %>
+
+
+
+
+
+

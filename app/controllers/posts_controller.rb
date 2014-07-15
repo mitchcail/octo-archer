@@ -1,7 +1,10 @@
 class PostsController < ApplicationController
 
-	before_action :require_signin, except: [:index, :show]
+	before_action :require_signin, except: [:homepage, :index, :show]
 
+
+	def homepage
+	end
 
 	def index
 		@posts = Post.all
@@ -10,6 +13,11 @@ class PostsController < ApplicationController
 	def show
 		@post = Post.find(params[:id])
 		@comments = @post.comments
+		@likers = @post.likers
+
+		if current_user
+			@current_like = current_user.likes.find_by(post_id: @post.id)
+		end
 	end
 
 	def edit

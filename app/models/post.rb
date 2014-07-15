@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
 
 	has_many :comments, dependent: :destroy
+	has_many :likes, dependent: :destroy
+	has_many :likers, through: :likes, source: :user
 
 	validates :title, :link, presence: true
 	validates :description, length: { minimum:25 }

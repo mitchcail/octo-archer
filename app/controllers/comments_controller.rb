@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
 
+	before_action :require_signin
+
 	def index
 		@post = Post.find(params[:post_id])
 		@comments = @post.comments
@@ -13,6 +15,7 @@ class CommentsController < ApplicationController
 	def create
 		@post = Post.find(params[:post_id])
 		@comment = @post.comments.new(comment_params)
+		@comment.user = current_user
 
 		if @comment.save
 			flash[:notice] = "Your comment was successfully posted"
@@ -25,7 +28,7 @@ class CommentsController < ApplicationController
 	private
 
 	def comment_params
-		params.require(:comment).permit(:name, :comment, :rating)
+		params.require(:comment).permit(:comment, :rating)
 	end
 
 end
