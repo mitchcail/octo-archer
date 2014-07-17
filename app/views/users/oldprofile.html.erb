@@ -1,0 +1,108 @@
+<% if current_user?(@user) || admin? %>
+  <header class="header-16">
+      <div class="container">
+          <div class="row">
+              <div class="navbar" role="navigation">
+                  <div class="navbar-header">
+                      <button type="button" class="navbar-toggle">
+                          <span>MENU</span>
+                          <div>CLOSE</div>
+                      </button>
+                      <div class="navbar-collapse collapse">
+                          <ul class="nav">
+                              <li class="active"><a href="#">HOME</a></li>
+                              <li><a href="#">PROJECTS</a></li>
+                              <li><a href="#">EDIT PROFILE</a></li>
+                              <li><%= link_to "SIGN OUT", sign_out_path %></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </header>
+<% end %>
+<section class="header-16-sub" style="height: 718px;">
+    <div id="h-16-pt-main" class="page-transitions pt-perspective">
+        <div class="v-center pt-page pt-page-1 pt-page-current bg-turquoise">
+            <div>
+                <div class="background">&nbsp;</div>
+                <div class="container">
+                    <div class="hero-unit">
+                        <h1><%= @user.name %></h1>
+                    </div>
+                </div>
+            </div>
+        
+            <span class="pt-controls">
+                <div class="container">
+                    <a class="pt-control-prev">MORE STUFF</a>
+                    <a class="pt-control-next" href="#">MORE STUFF</a>
+                </div>
+            </span>
+        </div>
+        <div class="v-center pt-page pt-page-2 bg-peter-river">
+            <div>
+                <div class="background">&nbsp;</div>
+                <div class="container">
+                    <div class="hero-unit">
+                        <h1><%= @user.name %></h1>
+                    </div>
+                </div>
+            </div>
+            
+            <span class="pt-controls">
+                <div class="container">
+                    <a class="pt-control-prev" href="#">MORE STUFF</a>
+                    <a class="pt-control-next" href="#">MORE STUFF</a>
+                </div>
+            </span>
+        </div>
+        <div class="v-center pt-page pt-page-3 bg-emerland">
+            <div>
+                <div class="background">&nbsp;</div>
+                <div class="container">
+                    <div class="hero-unit">
+                        <h1><%= @user.name %></h1>
+                    </div>
+                </div>
+            </div>
+            
+            <span class="pt-controls">
+                <div class="container">
+                    <a class="pt-control-prev" href="#">MORE STUFF</a>
+                    <a class="pt-control-next">MORE STUFF/a>
+                </div>
+            </span>
+        </div>
+    </div>
+</section>
+
+<section class="blog-2">
+    <div class="background hidden-xs">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div><img src="http://www.wallsave.com/wallpapers/1600x1200/nature-sad-boy-/117066/nature-sad-boy-beautiful-high-resolution-sonic-117066.jpg"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7 col-sm-offset-5">
+                <h3>
+                    <img src="http://www.sports-logos-screensavers.com/user/Toronto_Maple_Leafs2.jpg" width="100" height="100" alt="">
+                    Features of Startup Framework
+                </h3>
+                <div class="promo">
+                    <h4>The second sneak-peek</h4>
+                    <p>The most important parts of the Startup Framework are Samples and the UI Kit that includes a set of different components. The samples consist of a set of 25 pages.</p>
+                </div>
+                <h6>Feel our design</h6>
+                <p>Samples will show you the feeling on how to play around using the components in the website building process. To get started, you select the sample and base the website on it.</p>
+                <p><button class="btn btn-inverse">Learn more</button></p>
+            </div>
+        </div>
+    </div>
+</section>

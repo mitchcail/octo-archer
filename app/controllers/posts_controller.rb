@@ -35,11 +35,13 @@ class PostsController < ApplicationController
 	end
 
 	def new
-		@post = Post.new
+		@user = current_user
+		@post = @user.posts.new
 	end
 
 	def create
-		@post = Post.new(post_params)
+		@user = current_user
+		@post = @user.posts.new(post_params)
 		if @post.save
 			flash[:notice] = "New Post successfully created"
 			redirect_to posts_url
@@ -51,13 +53,6 @@ class PostsController < ApplicationController
 	def destroy
 		Post.find(params[:id]).destroy
 		redirect_to posts_url
-	end
-
-	def upvote
-		post = Post.find(params[:id])
-		post.upvote
-		post.save
-		redirect_to :back
 	end
 
 

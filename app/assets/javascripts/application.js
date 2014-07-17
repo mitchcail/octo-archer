@@ -19,3 +19,4 @@
 //= require jquery.svganim.js
 //= require startup-kit.js
 //= require script.js
+//= require profile_script.js

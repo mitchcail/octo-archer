@@ -10,10 +10,11 @@ Launchify::Application.routes.draw do
 
   root "posts#homepage"
  	
- 	put "post/:id/upvote", to: "posts#upvote", as: "post_upvote"	
   get "homepage", to: "posts#homepage", as: "homepage"
   resources :posts do
   	resources :comments
     resources :likes
   end
+
+  get "post/:id/delete", to: "posts#destroy", as: "post_delete"
 end

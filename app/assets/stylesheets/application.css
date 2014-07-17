@@ -13,11 +13,13 @@
  *= require flat-ui.css
  *= require icon-font.css
  *= require animations.css
- *= require content_style.css
  *= require contact_style.css
  *= require header_style.css
  *= require project_style.css
  *= require footer_style.css
  *= require posts_style.css
+ *= require content_style.css
+ *= require blog_style.css
+ *= require profile_style.css
  */
 

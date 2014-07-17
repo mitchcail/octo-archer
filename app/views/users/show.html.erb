@@ -1,82 +1,77 @@
-<% if current_user?(@user) || admin? %>
-  <header class="header-16">
-      <div class="container">
-          <div class="row">
-              <div class="navbar" role="navigation">
-                  <div class="navbar-header">
-                      <button type="button" class="navbar-toggle">
-                          <span>MENU</span>
-                          <div>CLOSE</div>
-                      </button>
-                      <div class="navbar-collapse collapse">
-                          <ul class="nav">
-                              <li class="active"><a href="#">HOME</a></li>
-                              <li><a href="#">PROJECTS</a></li>
-                              <li><a href="#">EDIT PROFILE</a></li>
-                              <li><%= link_to "SIGN OUT", sign_out_path %></li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </header>
-<% end %>
-<section class="header-16-sub" style="height: 718px;">
-    <div id="h-16-pt-main" class="page-transitions pt-perspective">
-        <div class="v-center pt-page pt-page-1 pt-page-current bg-turquoise">
-            <div>
-                <div class="background">&nbsp;</div>
+<header class="header-21">
                 <div class="container">
-                    <div class="hero-unit">
-                        <h1><%= @user.name %></h1>
+                    <div class="navbar col-sm-12"> 
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav">
+                                <li class="active">
+                                    <a href="#">HOME</a>
+                                </li>
+                                <li>
+                                    <a href="#">ABOUT</a>
+                                </li>
+                                <li>
+                                    <a href="#">BLOG</a>
+                                </li>
+                                <li>
+                                    <a href="#">PROJECTS</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        
-            <span class="pt-controls">
-                <div class="container">
-                    <a class="pt-control-prev">MORE STUFF</a>
-                    <a class="pt-control-next" href="#">MORE STUFF</a>
-                </div>
-            </span>
-        </div>
-        <div class="v-center pt-page pt-page-2 bg-peter-river">
-            <div>
-                <div class="background">&nbsp;</div>
-                <div class="container">
-                    <div class="hero-unit">
-                        <h1><%= @user.name %></h1>
+            </header>
+            <section class="header-21-sub v-center">
+                <div>
+                    <div class="background">
+                        &nbsp;
+                    </div>
+                    <div class="container">
+                        <h3><%= image_tag "me.jpg" %> Mitch</h3>
+                        <p class="lead">
+                            @mitchocail
+                        </p>
                     </div>
                 </div>
-            </div>
-            
-            <span class="pt-controls">
-                <div class="container">
-                    <a class="pt-control-prev" href="#">MORE STUFF</a>
-                    <a class="pt-control-next" href="#">MORE STUFF</a>
+            </section>
+
+            <section class="blog-2">
+                <div class="background hidden-phone">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div>
+                                    <%= image_tag "img-1.jpg" %>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/.container-->
                 </div>
-            </span>
-        </div>
-        <div class="v-center pt-page pt-page-3 bg-emerland">
-            <div>
-                <div class="background">&nbsp;</div>
+
                 <div class="container">
-                    <div class="hero-unit">
-                        <h1><%= @user.name %></h1>
+                    <div class="row">
+                        <div class="col-sm-7 col-sm-offset-5">
+                            <h3>About Me</h3>
+                            <br/>
+                            <div class="promo">
+                                <p>
+                                    <h4><%= @user.about %></h4>
+                                </p>
+                            </div>
+                            <h6>"Anything is dildo if you try hard enough"</h6>
+                            - Abraham Linclon
+                            <p>
+                                <br/><br/>
+                            </p>
+                            <p>
+                                <section class="content-12">
+                                    <a class="wide btn-wide" href="#">CONTACT ME</a>
+                                </section>
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </div>
-            
-            <span class="pt-controls">
-                <div class="container">
-                    <a class="pt-control-prev" href="#">MORE STUFF</a>
-                    <a class="pt-control-next">MORE STUFF/a>
-                </div>
-            </span>
-        </div>
-    </div>
-</section>
+                </div><!--/.container-->
+            </section>
+
 
 <% if @liked_posts.any? %>
   <h3>LIKED POSTS</h3>

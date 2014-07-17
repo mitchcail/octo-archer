@@ -4,6 +4,8 @@ class Post < ActiveRecord::Base
 	has_many :likes, dependent: :destroy
 	has_many :likers, through: :likes, source: :user
 
+	belongs_to :user
+
 	validates :title, :link, presence: true
 	validates :description, length: { minimum:25 }
 
