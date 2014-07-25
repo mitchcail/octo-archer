@@ -4,6 +4,9 @@ class PostsController < ApplicationController
 
 
 	def homepage
+		if current_user
+			@user = current_user
+		end
 	end
 
 	def index
