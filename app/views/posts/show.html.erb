@@ -4,7 +4,7 @@
 	<div class="jumbotron">
 		<h1><%= @post.title %></h1>
 		<br/>
-		<h3><%= @post.link %></h3>
+		<h3><%= link_to @post.link %></h3>
 		<br/>
 		<h3><%= @post.description %></h3>
 		<br/>
@@ -40,7 +40,7 @@
 						<div class="message-head clearfix">
 							<div class="avatar pull-left"><%= image_tag "place_holder.jpg", height: '90', width: '70' %></div>
 							<div class="user-detail">
-								<h5 class="handle"><%= comment.name %></h5>
+								<h5 class="handle"><%= comment.user.name %></h5>
 								<div class="post-meta">
 									<div class="asker-meta">
 										<span class="qa-message-what"></span>
