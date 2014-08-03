@@ -1,3 +1,25 @@
+<header class="header-10">
+    <div class="container">
+        <div class="row">
+            <div class="navbar col-sm-12" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle"></button>
+                    <%= link_to 'Launchify', posts_path, class: "brand" %>
+                </div>
+                <div class="collapse navbar-collapse pull-right">
+                    <ul class="nav pull-left">
+                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="#">USER</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-background"></div>
+</header>
+
+
+
 <div class = 'container'>
 	<br/>
 	<br/>
@@ -27,36 +49,67 @@
 		<%= link_to "Edit Post", edit_post_path(@post), id: "link" %> |
 		<%= link_to "Delete Post", post_delete_path %>
 	</div>
+	<br/>
+	<br/>
+	<br/>
 
+	<section class="content-19">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="quote">
+                    <div class="quote-text">
+                        We have considered your needs in developing the html version of our UI Kit, which contains
+                        elements.
+                    </div>
+                    <div class="quote-author">
+                        <div class="quote-author-photo"></div>
+                        <div class="quote-author-name">
+                            VLADIMIR KUDINOV, DESIGNMODO
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-sm-offset-1">
+                <div class="quote">
+                    <div class="quote-author">
+                        <div class="quote-author-photo"></div>
+                        <div class="quote-author-name">@mc</div>
+                    </div>
+                    <div class="quote-date">25 MINUTES AGO</div>
+                    <div class="quote-text">Easy to change and easy to create new elements with color.</div>
+                </div>
+                <div class="quote">
+                    <div class="quote-author">
+                        <div class="quote-author-photo"></div>
+                        <div class="quote-author-name">@stSilent</div>
+                    </div>
+                    <div class="quote-date">1 HOUR AGO</div>
+                    <div class="quote-text">Easy to change and easy to create new elements with color.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<div class="container">
-	<div class="row">
-		<h2>Comments</h2>
-	</div>
+<section class="content-19">
+	<div class="container">
 		<% @comments.each do |comment| %>
-    		<div class="qa-message-list" id="wallmessages">
-				<div class="message-item" id="m16">
-					<div class="message-inner">
-						<div class="message-head clearfix">
-							<div class="avatar pull-left"><%= image_tag "place_holder.jpg", height: '90', width: '70' %></div>
-							<div class="user-detail">
-								<h5 class="handle"><%= comment.user.name %></h5>
-								<div class="post-meta">
-									<div class="asker-meta">
-										<span class="qa-message-what"></span>
-										<span class="qa-message-when">
-											<span class="qa-message-when-data"><%= time_ago_in_words(comment.created_at)%> ago</span>
-										</span>
-										<div class="qa-message-content">
-											<%= comment.comment %>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-1">
+        <div class="quote">
+            <div class="quote-author">
+                <div class="quote-author-photo"></div>
+                <div class="quote-author-name"><%= link_to comment.user.name, comment.user %></div>
+            </div>
+            <div class="quote-date"><%= time_ago_in_words(comment.created_at)%> ago</div>
+            <div class="quote-text"><%= comment.comment %></div>
+        </div>
+      </div>
+		</div>
+		<br/>
+		<br/>
+		<br/>
 		<% end %>
 	</div>
-</div>
+</section>

@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
 
 		if @comment.save
 			flash[:notice] = "Your comment was successfully posted"
-			redirect_to post_comments_url
+			redirect_to @post
 		else
 			render :new
 		end
