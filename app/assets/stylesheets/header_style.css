@@ -878,7 +878,7 @@ section * {
 }
 .header-1 .navbar .nav > li > a {
   padding: 35px 0 27px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: normal;
   font-weight: 800;
   letter-spacing: 1px;
@@ -1354,8 +1354,8 @@ section * {
  * Header 4 stylesheet  
  * */
 .header-4 {
-  padding-top: 358px;
-  padding-bottom: 360px;
+  padding-top: 150px;
+  padding-bottom: 300px;
   color: white;
 }
 .header-4.v-center,

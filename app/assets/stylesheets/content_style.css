@@ -3397,6 +3397,15 @@ section * {
     font-weight: 600;
   }
 }
+.content-23.custom-bg {
+  background-image: url('../img/Italy_001.jpg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
 .content-24 {
   position: relative;
   padding: 140px 0;

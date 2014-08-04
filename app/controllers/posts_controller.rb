@@ -17,7 +17,7 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 		@comments = @post.comments
 		@likers = @post.likers
-
+		@comment = Comment.new
 		if current_user
 			@current_like = current_user.likes.find_by(post_id: @post.id)
 		end
@@ -54,8 +54,15 @@ class PostsController < ApplicationController
 	end
 
 	def destroy
-		Post.find(params[:id]).destroy
-		redirect_to posts_url
+		@user = current_user
+		@post = Post.find(params[:id])
+		if @post.user == @user
+			Post.find(params[:id]).destroy
+			redirect_to posts_url
+		else
+			render :homepage
+		end
+
 	end
 
 

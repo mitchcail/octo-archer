@@ -2,16 +2,6 @@
 <br/>
 <div class="row">
 <div class="col-md-5">
-	<%= form_for([@post,@comment]) do |f| %>
-		<form role="form">
-			
-			<div class="form-group">
-				<%= f.label :comment %><br/>
-				<%= f.text_area :comment, row: 40, class: "form-control", rows: "10" %>
-			</div>
-
-			<%= f.submit 'Post Comment' %>
-		</form>
-	<% end %>
+	<%= render partial: "form" %>
 	</div>
 </div>

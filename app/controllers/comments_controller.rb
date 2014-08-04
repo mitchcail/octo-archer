@@ -25,6 +25,20 @@ class CommentsController < ApplicationController
 		end
 	end
 
+	def show
+		@post = Post.find(params[:post_id])
+		@comment = @post.comments.find(params[:id])
+		@user = current_user
+
+		if @comment.user == current_user
+			@comment.destroy
+			redirect_to @post
+		else
+			redirect_to @post
+		end
+
+	end
+
 	private
 
 	def comment_params

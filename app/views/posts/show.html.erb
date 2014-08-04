@@ -18,40 +18,43 @@
     <div class="header-background"></div>
 </header>
 
-
-
-<div class = 'container'>
-	<br/>
-	<br/>
-	<div class="jumbotron">
-		<h1><%= @post.title %></h1>
-		<br/>
-		<h3><%= link_to @post.link %></h3>
-		<br/>
-		<h3><%= @post.description %></h3>
-		<br/>
-		<p>
-			<%= pluralize(@likers.size, 'like') %>
-		</p>
-		<% if !current_user?(@user) %>
-			<% if @current_like %>
-				<%= button_to "Unlike", post_like_path(@post, @current_like), method: :delete %>
-			<% else %>
-				<%= button_to "Like", post_likes_path(@post) %>
-			<% end %>
-		<% end %>
-		<br/>
-		<%= link_to "View Comments", post_comments_path(@post), id: "link" %> |
-		<%= link_to "Add new Comment", new_post_comment_path(@post), id: "link" %>
-		<br/>
-
-		<%= link_to "Back to Posts", posts_path, id: "link" %> |
-		<%= link_to "Edit Post", edit_post_path(@post), id: "link" %> |
-		<%= link_to "Delete Post", post_delete_path %>
-	</div>
-	<br/>
-	<br/>
-	<br/>
+<header class="header-4 v-center bg-midnight-blue">
+    <div class="background">&nbsp;</div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="hero-unit">
+                        <h1><%= @post.title %></h1>
+                        <h4><%= link_to @post.link, "GOTONOWHERE" %></h4>
+                        <br/>
+                        <p><%= @post.description %></p>
+                    </div>
+                    <div class="hero-unit">
+                        <p>
+                            <%= pluralize(@likers.size, 'like') %>
+                        </p>
+                    </div>
+                    
+                    <% if !current_user?(@post.user) %>
+                        <% if @current_like %>
+                            <div class="btns">
+                                <%= button_to "Unlike", post_like_path(@post, @current_like), class: "btn btn-large btn-primary", method: :delete %>
+                            </div>
+                        <% else %>
+                            <div class="btns">
+                                <%= button_to "Like", post_likes_path(@post), class: "btn btn-large btn-primary" %>
+                            </div>
+                        <% end %>
+                    <% else %>
+                        <%= link_to "Edit Post", edit_post_path(@post), id: "link", class: "btn btn-large btn-primary" %>
+                        <%= link_to "Delete Post", post_delete_path, class: "btn btn-large btn-grey" %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
 	<section class="content-19">
     <div class="container">
@@ -59,13 +62,12 @@
             <div class="col-sm-7">
                 <div class="quote">
                     <div class="quote-text">
-                        We have considered your needs in developing the html version of our UI Kit, which contains
-                        elements.
+                        <%= @post.description %>
                     </div>
                     <div class="quote-author">
                         <div class="quote-author-photo"></div>
                         <div class="quote-author-name">
-                            VLADIMIR KUDINOV, DESIGNMODO
+                            <%= @post.user.name %>, FOUNDER
                         </div>
                     </div>
                 </div>
@@ -91,7 +93,12 @@
         </div>
     </div>
 </section>
-
+<br/>
+<br/>
+<br/>
+<div class="container">
+    <%= render partial: "comments/form" %>
+</div>
 <section class="content-19">
 	<div class="container">
 		<% @comments.each do |comment| %>
@@ -100,10 +107,17 @@
         <div class="quote">
             <div class="quote-author">
                 <div class="quote-author-photo"></div>
-                <div class="quote-author-name"><%= link_to comment.user.name, comment.user %></div>
+                <div class="quote-author-name">
+                    <%= link_to comment.user.name, comment.user %>
+                    <% if current_user?(comment.user) %>
+                        <%= link_to 'Delete', post_comment_path(@post, comment), method: :delete %>
+                    <% end %>
+                </div>
             </div>
             <div class="quote-date"><%= time_ago_in_words(comment.created_at)%> ago</div>
-            <div class="quote-text"><%= comment.comment %></div>
+            <div class="quote-text">
+                <%= comment.comment %>
+            </div>
         </div>
       </div>
 		</div>
