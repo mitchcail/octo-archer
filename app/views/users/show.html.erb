@@ -94,9 +94,57 @@
     </div><!--/.container-->
 </section>
 
+<% if @posts.any? %>
+    <section class="crew-1">
+        <div class="container">
+            <h3>Look what I've done...</h3>
+            <% @posts.each do |post| %>
+                <div class="members pull-left">
+                    <div class="member-wrapper">
+                        <div class="member">
+                            <div class="photo-wrapper">
+                                <div class="photo" style="background-image: url(file:///Users/mitchcail/Desktop/Startup_Framework/Developer/common-files/img/crew/vladimir-k.png);"><img src="../../common-files/img/crew/vladimir-k.png" alt="" style="display: none;"></div>
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="info">
+                                <div class="name"><%= link_to post.title, post%></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+        <!--/.container-->
+    </section>
+<% end %>
+
 <% if @liked_posts.any? %>
+    <section class="crew-1">
+        <div class="container">
+            <h3>Projects I'm lovin'...</h3>
+            <% @liked_posts.each do |post| %>
+                <div class="members pull-left">
+                    <div class="member-wrapper">
+                        <div class="member">
+                            <div class="photo-wrapper">
+                                <div class="photo" style="background-image: url(file:///Users/mitchcail/Desktop/Startup_Framework/Developer/common-files/img/crew/vladimir-k.png);"><img src="../../common-files/img/crew/vladimir-k.png" alt="" style="display: none;"></div>
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="info">
+                                <div class="name"><%= link_to post.title, post%></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+        <!--/.container-->
+    </section>
+<% end %>
+
+<% if @posts.any? %>
   <h3>LIKED POSTS</h3>
-  <% @liked_posts.each do |post| %>
+  <% @posts.each do |post| %>
     <%= link_to post.title, post%>
   <% end %>
 <% end %>

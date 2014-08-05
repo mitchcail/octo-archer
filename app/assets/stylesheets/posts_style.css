@@ -635,7 +635,7 @@ section * {
 }
 .crew-1 .members {
   display: table;
-  width: 100%;
+  width: 33%;
 }
 .crew-1 .members + .members {
   margin-top: 80px;
