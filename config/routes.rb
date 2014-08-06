@@ -1,6 +1,8 @@
 Launchify::Application.routes.draw do
   
 
+  resources :post_updates
+
   resource :session
 
   get "sign_out" => "sessions#destroy"
@@ -14,6 +16,7 @@ Launchify::Application.routes.draw do
   resources :posts do
   	resources :comments
     resources :likes
+    resources :post_updates
   end
 
   get "post/:id/delete", to: "posts#destroy", as: "post_delete"

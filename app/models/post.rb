@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
 	has_many :comments, dependent: :destroy
 	has_many :likes, dependent: :destroy
 	has_many :likers, through: :likes, source: :user
+	has_many :post_updates, dependent: :destroy
 
 	belongs_to :user
 
