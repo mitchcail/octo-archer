@@ -47,7 +47,8 @@
                             </div>
                         <% end %>
                     <% else %>
-                        <%= link_to "Edit Post", edit_post_path(@post), id: "link", class: "btn btn-large btn-primary" %>
+                        <%= link_to "Edit Post", edit_post_path(@post), id: "link", class: "btn btn-large btn-primary" %><br/>
+                        <%= link_to "Add a new update", new_post_post_update_path(@post), class: "btn btn-large btn-primary" %>
                         <%= link_to "Delete Post", post_delete_path, class: "btn btn-large btn-grey" %>
                     <% end %>
                 </div>

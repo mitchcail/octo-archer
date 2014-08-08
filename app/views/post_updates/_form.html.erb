@@ -1,0 +1,11 @@
+<%= form_for ([@post, @post_updates]) do |f| %>
+  <form role="form">
+
+  <div class="form-group">
+    <%= f.label :update %><br/>
+    <%= f.text_area :content, row: 40, class: "form-control", rows: "5" %>
+  </div>
+
+  <%= f.submit 'Post Comment' %>
+  </form>
+<% end %>
