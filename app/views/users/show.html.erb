@@ -142,13 +142,6 @@
     </section>
 <% end %>
 
-<% if @posts.any? %>
-  <h3>LIKED POSTS</h3>
-  <% @posts.each do |post| %>
-    <%= link_to post.title, post%>
-  <% end %>
-<% end %>
-
 
 
 

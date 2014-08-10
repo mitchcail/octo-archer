@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
-  before_action :require_signin, except: [:new, :create]
-  before_action :require_correct_user, only: [:edit, :update, :destroy]
+  before_action :require_signin, except: [:new, :create, :feed]
+  before_action :require_correct_user, only: [:edit, :update, :destroy, :feed]
 
   def index
     @users = User.all
@@ -43,6 +43,12 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     redirect_to root_url
   end
+
+  # def feed
+  #   @user = User.find(params[:id])
+  #   @liked_posts = @user.liked_posts
+  #   @
+  # end
 
   private
 

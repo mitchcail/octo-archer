@@ -1,5 +1,16 @@
-<h1>updates</h1>
-
-<% @post_updates.each do |update| %>
-  <%= update.content %>
-<% end %>
+<div class="container">
+  <h1>updates</h1>
+</div>
+<section class="content-31">
+  <div class="container">
+    <% @post_updates.each do |update| %>
+      <div class="row">
+          <div class="number"></div>
+          <div class="col-sm-8 col-sm-offset-2">
+              <h3><%= update.content %></h3>
+              <p>this is static right meow but will serve a purpose in the future</p>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</section>

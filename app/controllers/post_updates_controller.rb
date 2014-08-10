@@ -1,5 +1,8 @@
 class PostUpdatesController < ApplicationController
 
+  before_action :require_signin
+
+  #before_action :require_correct_user, only: [:new, :create]
 
   def index
     @post = Post.find(params[:post_id])
