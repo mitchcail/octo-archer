@@ -18,6 +18,7 @@ class PostUpdatesController < ApplicationController
     @post = Post.find(params[:post_id])
     @post_updates = @post.post_updates.new(update_params)
     if @post_updates.save
+      track_activity(@post_updates, @post)
       redirect_to @post
     else
       render :new

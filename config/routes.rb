@@ -1,6 +1,8 @@
 Launchify::Application.routes.draw do
   
 
+  resources :activities
+
   resources :post_updates
 
   resource :session

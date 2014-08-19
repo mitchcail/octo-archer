@@ -5,6 +5,8 @@ class Post < ActiveRecord::Base
 	has_many :likers, through: :likes, source: :user
 	has_many :post_updates, dependent: :destroy
 
+	has_many :activities
+
 	belongs_to :user
 
 	validates :title, :link, presence: true

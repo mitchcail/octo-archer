@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>FEED</h1>
+</div>
+<section class="content-31">
+  <div class="container">
+    <% @feed.each do |activity| %>
+      <div class="row">
+          <div class="number"></div>
+          <div class="col-sm-8 col-sm-offset-2">
+              <h3><%= link_to activity.user.name, activity.user %></h3>
+              <p>added an update for <%= link_to activity.post.title, activity.post %></p>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</section>
