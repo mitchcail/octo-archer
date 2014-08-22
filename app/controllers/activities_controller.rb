@@ -2,6 +2,7 @@ class ActivitiesController < ApplicationController
 
   def index
     @feed = user_feed.order(created_at: :desc)
+    binding.pry
   end
 
 

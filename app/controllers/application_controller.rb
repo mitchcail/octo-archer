@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
   helper_method :admin?
 
   def track_activity(trackable, post,  action = params[:action])
-    current_user.activities.create! action: action, trackable: trackable, post: post
+    Aactivity.create! action: action, trackable: trackable, post: post, user: current_user
     binding.pry
   end
 
