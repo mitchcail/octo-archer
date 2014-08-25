@@ -38,6 +38,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem "paperclip", "~> 4.1"
 
+gem 'aws-sdk'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
