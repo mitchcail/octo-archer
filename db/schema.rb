@@ -38,9 +38,6 @@ ActiveRecord::Schema.define(version: 20140822182254) do
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
 
-# Could not dump table "feeds" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
-
   create_table "likes", force: true do |t|
     t.integer  "post_id"
     t.integer  "user_id"
@@ -69,16 +66,6 @@ ActiveRecord::Schema.define(version: 20140822182254) do
     t.integer  "upvotes"
     t.string   "user_id"
   end
-
-  create_table "updates", force: true do |t|
-    t.integer  "post_update_id"
-    t.integer  "like_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "updates", ["like_id"], name: "index_updates_on_like_id"
-  add_index "updates", ["post_update_id"], name: "index_updates_on_post_update_id"
 
   create_table "users", force: true do |t|
     t.string   "name"
