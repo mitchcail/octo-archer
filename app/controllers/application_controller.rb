@@ -35,4 +35,11 @@ class ApplicationController < ActionController::Base
     binding.pry
   end
 
+  # this is a front-end helper and likely shouldn't be here. will look into moving it later
+  def get_background(post)
+    "background-image: url(#{post.background.url});"
+  end
+
+  helper_method :get_background
+
 end

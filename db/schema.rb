@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140822182254) do
+ActiveRecord::Schema.define(version: 20140826130307) do
 
   create_table "activities", force: true do |t|
     t.integer  "user_id"
@@ -65,6 +65,10 @@ ActiveRecord::Schema.define(version: 20140822182254) do
     t.string   "description"
     t.integer  "upvotes"
     t.string   "user_id"
+    t.string   "background_file_name"
+    t.string   "background_content_type"
+    t.integer  "background_file_size"
+    t.datetime "background_updated_at"
   end
 
   create_table "users", force: true do |t|

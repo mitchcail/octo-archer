@@ -1,29 +1,10 @@
-<header class="header-10">
-    <div class="container">
-        <div class="row">
-            <div class="navbar col-sm-12" role="navigation">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle"></button>
-                    <%= link_to 'Launchify', posts_path, class: "brand" %>
-                </div>
-                <div class="collapse navbar-collapse pull-right">
-                    <ul class="nav pull-left">
-                        <li><a href="#">ABOUT</a></li>
-                        <li><a href="#">USER</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="header-background"></div>
-</header>
-
 <header class="header-4 v-center bg-midnight-blue">
-    <div class="background">&nbsp;</div>
+    <div class="background" style= "<%= get_background(@post) %>" ></div>
+
     <div>
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-6 well" style="background-color: rgba(70, 60, 60, 0.6);border: 1px solid #000000;">
                     <div class="hero-unit">
                         <h1><%= @post.title %></h1>
                         <h4><%= link_to @post.link, "GOTONOWHERE" %></h4>
@@ -57,7 +38,7 @@
     </div>
 </header>
 
-	<section class="content-19">
+<section class="content-19">
     <div class="container">
         <div class="row">
             <div class="col-sm-7">

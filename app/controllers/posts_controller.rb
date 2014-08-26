@@ -15,6 +15,7 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find(params[:id])
+
 		@comments = @post.comments
 		@likers = @post.likers
 		@comment = Comment.new
@@ -69,6 +70,6 @@ class PostsController < ApplicationController
 	private
 
 	def post_params
-		params.require(:post).permit(:title, :link, :description)
+		params.require(:post).permit(:title, :link, :description, :background)
 	end
 end
